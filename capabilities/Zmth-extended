@@ -11,6 +11,7 @@ codepoints:
 - 177 # ±
 - 215 # ×
 - 247 # ÷
+- !ruby/range 8242..8243 # ′ ″
 - 8592 # ←
 - 8594 # →
 - 8596 # ↔
@@ -32,4 +33,4 @@ codepoints:
 - !ruby/range 8838..8839 # ⊆ ⊇
 parlance:
   schema_version: 1
-  definition_hash: e9f60f2d3aeb0f73047ec812a6a48543762473ab6b1f85ebe23a4b68c2536904
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a

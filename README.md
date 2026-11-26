@@ -47,7 +47,7 @@ under `capabilities/` and never become primary-language candidates.
 | Capability | Required glyphs |
 | --- | --- |
 | `Zmth-basic` | `0123456789+-*/=−×÷±<>≤≥≠(),.%` (29) |
-| `Zmth-extended` | All of `Zmth-basic` plus `∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔` (58 total) |
+| `Zmth-extended` | All of `Zmth-basic` plus `∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔′″` (60 total) |
 | `Zsym-editorial` | `–—…•‘’‚“”‹›«».,:;!?` (19) |
 | `Zsym-publishing` | `©®™§¶•†‡…°&@#` (13) |
 

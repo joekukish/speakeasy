@@ -15,7 +15,7 @@ describe "Independent capabilities" do
   it "requires the exact complete glyph inventories independently of language exclusions" do
     expected = {
       "Zmth-basic" => "0123456789+-*/=−×÷±<>≤≥≠(),.%",
-      "Zmth-extended" => "0123456789+-*/=−×÷±<>≤≥≠(),.%∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔",
+      "Zmth-extended" => "0123456789+-*/=−×÷±<>≤≥≠(),.%∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔′″",
       "Zsym-editorial" => "–—…•‘’‚“”‹›«».,:;!?",
       "Zsym-publishing" => "©®™§¶•†‡…°&@#"
     }
@@ -37,9 +37,11 @@ describe "Independent capabilities" do
     glyphs = extended.codepoints.dup
     expect(basic.supported_by?(glyphs)).to eq(true)
     expect(extended.supported_by?(glyphs)).to eq(true)
-    glyphs.delete(0x2211)
-    expect(extended.supported_by?(glyphs)).to eq(false)
-    expect(basic.supported_by?(glyphs)).to eq(true)
+    [0x2211, 0x2032, 0x2033].each do |point|
+      partial = glyphs - [point]
+      expect(extended.supported_by?(partial)).to eq(false)
+      expect(basic.supported_by?(partial)).to eq(true)
+    end
   end
 
   it "requires sentence punctuation as well as Western typographic quotes" do
