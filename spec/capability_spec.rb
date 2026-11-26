@@ -3,12 +3,12 @@ require File.dirname(__FILE__) + "/spec_helper"
 describe "Independent capabilities" do
   it "keeps capabilities out of language enumeration" do
     expect(Speakeasy::Capability.supported_capability_ids).to match_array(
-      %w[Zmth-basic Zmth-extended Zsym-publishing]
+      %w[Zmth-basic Zmth-extended Zsym-editorial Zsym-numerals Zsym-publishing]
     )
     expect(Speakeasy::Language.supported_language_ids.size).to eq(78)
     expect(Speakeasy::Language.supported_language_ids & Speakeasy::Capability.supported_capability_ids).to be_empty
     expect(Speakeasy::Capability.each.map(&:capability_id)).to match_array(
-      %w[Zmth-basic Zmth-extended Zsym-publishing]
+      %w[Zmth-basic Zmth-extended Zsym-editorial Zsym-numerals Zsym-publishing]
     )
   end
 
@@ -16,6 +16,8 @@ describe "Independent capabilities" do
     expected = {
       "Zmth-basic" => "0123456789+-*/=−×÷±<>≤≥≠(),.%",
       "Zmth-extended" => "0123456789+-*/=−×÷±<>≤≥≠(),.%∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔",
+      "Zsym-editorial" => "–—…•‘’‚“”‹›«».,:;!?",
+      "Zsym-numerals" => "0123456789",
       "Zsym-publishing" => "©®™§¶•†‡…°&@#"
     }
     expected.each do |id, text|
@@ -39,6 +41,23 @@ describe "Independent capabilities" do
     glyphs.delete(0x2211)
     expect(extended.supported_by?(glyphs)).to eq(false)
     expect(basic.supported_by?(glyphs)).to eq(true)
+  end
+
+  it "qualifies numeral-only fonts without requiring editorial punctuation" do
+    glyphs = "0123456789".codepoints
+    numerals = Speakeasy::Capability.new("Zsym-numerals")
+    expect(numerals.supported_by?(glyphs)).to eq(true)
+    expect(Speakeasy::Capability.new("Zsym-editorial").supported_by?(glyphs)).to eq(false)
+    glyphs.delete("9".ord)
+    expect(numerals.supported_by?(glyphs)).to eq(false)
+  end
+
+  it "requires sentence punctuation as well as Western typographic quotes" do
+    editorial = Speakeasy::Capability.new("Zsym-editorial")
+    glyphs = editorial.codepoints.dup
+    expect(editorial.supported_by?(glyphs)).to eq(true)
+    glyphs.delete(";".ord)
+    expect(editorial.supported_by?(glyphs)).to eq(false)
   end
 
   it "does not revoke language support when a capability glyph is missing" do

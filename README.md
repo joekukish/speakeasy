@@ -47,6 +47,8 @@ under `capabilities/` and never become primary-language candidates.
 | --- | --- |
 | `Zmth-basic` | `0123456789+-*/=−×÷±<>≤≥≠(),.%` (29) |
 | `Zmth-extended` | All of `Zmth-basic` plus `∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔` (58 total) |
+| `Zsym-editorial` | `–—…•‘’‚“”‹›«».,:;!?` (19) |
+| `Zsym-numerals` | `0123456789` (10) |
 | `Zsym-publishing` | `©®™§¶•†‡…°&@#` (13) |
 
 ```ruby
@@ -64,6 +66,9 @@ or mathematical typesetting. These are product-scoped identifiers using ISO
 15924 prefixes, not language/locale tags or exhaustive script inventories.
 Extended support implies basic support; an extended-only missing glyph removes
 only the extended label. Greek variables are deliberately excluded.
+Editorial excludes `„` and covers common Western quotation and sentence punctuation, not universal
+locale formatting. Language-specific quotation requirements remain unchanged.
+Numerals cover ASCII digit glyphs, not tabular figures or native numeral systems.
 
 Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 65 generated nonlegacy language
 minima. Digits, currency, ordinary punctuation, reviewed letters, and the 13 frozen

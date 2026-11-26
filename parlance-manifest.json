@@ -2,9 +2,11 @@
   "capability_ids": [
     "Zmth-basic",
     "Zmth-extended",
+    "Zsym-editorial",
+    "Zsym-numerals",
     "Zsym-publishing"
   ],
-  "definition_hash": "95b922f72fdfbfd95d4d38447bf4349e66e791ef09db2049e9ce5aa9d62e42fa",
+  "definition_hash": "11a4dcd0bb18f016f6560a3da8efb55ee0b9d130febaab7bdc750001e362ed94",
   "generator": "Parlance",
   "language_ids": [
     "Deva",
