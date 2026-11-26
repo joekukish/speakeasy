@@ -18,8 +18,8 @@ module Speakeasy
     #
     # Returns an Array of Speakeasy::Language.
     def self.all
-      Dir.glob("#{DATA_DIR}/*").map do |file|
-        Language.new(File.basename(file))
+      supported_language_ids.map do |language_id|
+        new(language_id)
       end
     end
 
@@ -35,10 +35,10 @@ module Speakeasy
     def initialize(language_id)
       @language_id = language_id
 
-      filename = File.join(DATA_DIR, language_id)
+      filename = File.join(data_directory, language_id)
 
       unless File.exist? filename
-        raise "The file describing this language doesn't exist in #{DATA_DIR}"
+        raise "The file describing this language doesn't exist in #{data_directory}"
       end
 
       begin
@@ -86,6 +86,10 @@ module Speakeasy
     end
 
   private
+    def data_directory
+      DATA_DIR
+    end
+
     def verify
       raise "No codepoints found" unless @data.has_key? "codepoints"
       raise "No anglicized language name found" unless @data.has_key? "anglicized_name"

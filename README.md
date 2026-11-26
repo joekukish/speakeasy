@@ -37,6 +37,48 @@ An example YAML file:
 
 Note: codepoints should only include normalized unicode codepoints.
 
+## Experimental independent capabilities
+
+`Speakeasy::Language.all`, `.each`, and `.supported_language_ids` still enumerate
+81 language/script profiles, including Welsh (`cy`), Icelandic (`is`), and
+Lithuanian (`lt`). Capability definitions live separately
+under `capabilities/` and never become primary-language candidates.
+
+| Capability | Required glyphs |
+| --- | --- |
+| `Zmth-basic` | `0123456789+-*/=−×÷±<>≤≥≠(),.%` (29) |
+| `Zmth-extended` | All of `Zmth-basic` plus `∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔′″` (60 total) |
+| `Zsym-editorial` | `–—…•‘’‚“”‹›«».,:;!?` (19) |
+| `Zsym-publishing` | `©®™§¶•†‡…°&@#` (13) |
+
+```ruby
+Speakeasy::Capability.each do |capability|
+  if capability.supported_by?(font_codepoints)
+    puts capability.capability_id
+  end
+end
+```
+
+Each capability requires every listed scalar. A single `+` does not imply the
+whole math capability. Missing a capability glyph does not revoke otherwise valid
+language coverage, and math glyph coverage does not certify OpenType MATH tables
+or mathematical typesetting. These are product-scoped identifiers using ISO
+15924 prefixes, not language/locale tags or exhaustive script inventories.
+Extended support implies basic support; an extended-only missing glyph removes
+only the extended label. Greek variables are deliberately excluded.
+Editorial excludes `„` and covers common Western quotation and sentence punctuation, not universal
+locale formatting. Language-specific quotation requirements remain unchanged.
+ASCII digits remain in language minima and both math inventories.
+
+Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 68 generated nonlegacy language
+minima. Digits, currency, ordinary punctuation, reviewed letters, and the 13 frozen
+public definitions remain unchanged. Overlap with language requirements is
+intentional. `parlance-source.json` pins the producer revision and artifact hashes.
+
+The three new profiles use pinned Hyperglot primary Latin orthographies and the
+existing shared policy. Icelandic additionally requires its CLDR closing primary
+quotation delimiter `“`. Panafrican and IPA remain frozen and unchanged.
+
 ## Example
 
     require 'rubygems'

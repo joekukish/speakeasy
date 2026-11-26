@@ -1,5 +1,11 @@
 {
-  "definition_hash": "ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6",
+  "capability_ids": [
+    "Zmth-basic",
+    "Zmth-extended",
+    "Zsym-editorial",
+    "Zsym-publishing"
+  ],
+  "definition_hash": "b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a",
   "generator": "Parlance",
   "language_ids": [
     "Deva",
@@ -14,6 +20,7 @@
     "ca",
     "chr",
     "cs",
+    "cy",
     "da",
     "de",
     "dv",
@@ -33,6 +40,7 @@
     "hu",
     "hy",
     "id",
+    "is",
     "it",
     "ja",
     "jv",
@@ -43,6 +51,7 @@
     "kn",
     "ko",
     "lo",
+    "lt",
     "lv",
     "mk",
     "ml",
@@ -84,6 +93,23 @@
       "verified"
     ],
     "exclusions": [
+      {
+        "codepoints": [
+          35,
+          38,
+          61,
+          64,
+          215,
+          247
+        ],
+        "except_ids": [],
+        "reason": "Experiment with independent math and publishing capabilities: remove only #, &, =, @, multiplication, and division from non-legacy language minima. Preserve numerals, currency, ordinary punctuation, raw inventories, and frozen legacy requirements.",
+        "scope": "generated",
+        "sources": [
+          "Experimental capability proposal, 2026-11-26"
+        ],
+        "when_required": []
+      },
       {
         "codepoints": [
           94
@@ -208,7 +234,7 @@
         ]
       }
     ],
-    "id": "standard-coverage-v1",
+    "id": "experimental-symbol-capabilities-v1",
     "language_statuses": [
       "living"
     ],

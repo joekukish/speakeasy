@@ -1,0 +1,21 @@
+---
+version: 2
+anglicized_name: Western editorial punctuation
+native_name: Western editorial punctuation
+codepoints:
+- 33 # !
+- 44 # ,
+- 46 # .
+- !ruby/range 58..59 # : ;
+- 63 # ?
+- 171 # «
+- 187 # »
+- !ruby/range 8211..8212 # – —
+- !ruby/range 8216..8218 # ‘ ’ ‚
+- !ruby/range 8220..8221 # “ ”
+- 8226 # •
+- 8230 # …
+- !ruby/range 8249..8250 # ‹ ›
+parlance:
+  schema_version: 1
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a

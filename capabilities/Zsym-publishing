@@ -1,0 +1,19 @@
+---
+version: 2
+anglicized_name: Publishing symbols
+native_name: Publishing symbols
+codepoints:
+- 35 # #
+- 38 # &
+- 64 # @
+- 167 # §
+- 169 # ©
+- 174 # ®
+- 176 # °
+- 182 # ¶
+- !ruby/range 8224..8226 # † ‡ •
+- 8230 # …
+- 8482 # ™
+parlance:
+  schema_version: 1
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a

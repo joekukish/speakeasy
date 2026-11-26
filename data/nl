@@ -3,12 +3,12 @@ version: 2
 anglicized_name: Dutch
 native_name: Nederlands
 codepoints:
-- !ruby/range 33..35 # ! " #
-- !ruby/range 37..47 # % & ' ( ) * + , - . /
+- !ruby/range 33..34 # ! "
+- 37 # %
+- !ruby/range 39..47 # ' ( ) * + , - . /
 - !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
 - !ruby/range 58..59 # : ;
-- 61 # =
-- !ruby/range 63..64 # ? @
+- 63 # ?
 - !ruby/range 65..90 # A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
 - !ruby/range 91..93 # [ \ ]
 - 95 # _
@@ -21,7 +21,6 @@ codepoints:
 - 207 # Ï
 - !ruby/range 211..212 # Ó,Ô
 - 214 # Ö
-- 215 # ×
 - !ruby/range 218..220 # Ú,Û,Ü
 - !ruby/range 225..226 # á,â
 - 228 # ä
@@ -30,7 +29,6 @@ codepoints:
 - 239 # ï
 - !ruby/range 243..244 # ó,ô
 - 246 # ö
-- 247 # ÷
 - !ruby/range 250..252 # ú,û,ü
 - 306 # Ĳ
 - 307 # ĳ
@@ -42,4 +40,4 @@ codepoints:
 - 8364 # €
 parlance:
   schema_version: 1
-  definition_hash: ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a

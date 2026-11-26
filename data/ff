@@ -6,7 +6,6 @@ codepoints:
 - 37 # %
 - 43 # +
 - !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
-- 61 # =
 - !ruby/range 65..80 # A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P
 - !ruby/range 82..85 # R,S,T,U
 - !ruby/range 87..89 # W,X,Y
@@ -14,9 +13,7 @@ codepoints:
 - !ruby/range 114..117 # r,s,t,u
 - !ruby/range 119..121 # w,x,y
 - 209 # Ñ
-- 215 # ×
 - 241 # ñ
-- 247 # ÷
 - 330 # Ŋ
 - 331 # ŋ
 - 385 # Ɓ
@@ -27,4 +24,4 @@ codepoints:
 - 599 # ɗ
 parlance:
   schema_version: 1
-  definition_hash: ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a

@@ -1,0 +1,36 @@
+---
+version: 2
+anglicized_name: Extended mathematical notation
+native_name: Extended mathematical notation
+codepoints:
+- 37 # %
+- !ruby/range 40..47 # ( ) * + , - . /
+- !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
+- !ruby/range 60..62 # < = >
+- 172 # ¬
+- 177 # ±
+- 215 # ×
+- 247 # ÷
+- !ruby/range 8242..8243 # ′ ″
+- 8592 # ←
+- 8594 # →
+- 8596 # ↔
+- 8658 # ⇒
+- 8660 # ⇔
+- 8704 # ∀
+- !ruby/range 8706..8707 # ∂ ∃
+- 8709 # ∅
+- !ruby/range 8711..8713 # ∇ ∈ ∉
+- 8719 # ∏
+- !ruby/range 8721..8722 # ∑ −
+- 8730 # √
+- !ruby/range 8733..8734 # ∝ ∞
+- !ruby/range 8743..8747 # ∧ ∨ ∩ ∪ ∫
+- 8776 # ≈
+- !ruby/range 8800..8801 # ≠ ≡
+- !ruby/range 8804..8805 # ≤ ≥
+- !ruby/range 8810..8811 # ≪ ≫
+- !ruby/range 8838..8839 # ⊆ ⊇
+parlance:
+  schema_version: 1
+  definition_hash: b71830f345e7d1750608e4b691eed292d1062e4ee818622a93866ab82998041a
