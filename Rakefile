@@ -57,10 +57,13 @@ require 'speakeasy'
 require 'ostruct'
 
 task :default do
-  puts "Verifying all languages..."
+  puts "Verifying all languages and capabilities..."
   Dir.glob("data/*") do |file|
     language = File.basename(file)
     Rake::Task["test"].execute(OpenStruct.new(:language => language))
+  end
+  Speakeasy::Capability.each do |capability|
+    success "#{capability.capability_id}: Valid!"
   end
   puts "Complete."
 end

@@ -37,6 +37,36 @@ An example YAML file:
 
 Note: codepoints should only include normalized unicode codepoints.
 
+## Experimental independent capabilities
+
+`Speakeasy::Language.all`, `.each`, and `.supported_language_ids` still enumerate
+the 78 existing language/script profiles. Capability definitions live separately
+under `capabilities/` and never become primary-language candidates.
+
+| Capability | Required glyphs |
+| --- | --- |
+| `Zmth-basic` | `0123456789+-*/=−×÷±<>≤≥≠(),.%` (29) |
+| `Zsym-publishing` | `©®™§¶•†‡…°&@#` (13) |
+
+```ruby
+Speakeasy::Capability.each do |capability|
+  if capability.supported_by?(font_codepoints)
+    puts capability.capability_id
+  end
+end
+```
+
+Each capability requires every listed scalar. A single `+` does not imply the
+whole math capability. Missing a capability glyph does not revoke otherwise valid
+language coverage, and math glyph coverage does not certify OpenType MATH tables
+or mathematical typesetting. These are product-scoped identifiers using ISO
+15924 prefixes, not language/locale tags or exhaustive script inventories.
+
+Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 65 generated nonlegacy language
+minima. Digits, currency, ordinary punctuation, reviewed letters, and the 13 frozen
+public definitions remain unchanged. Overlap with language requirements is
+intentional. `parlance-source.json` pins the producer revision and artifact hashes.
+
 ## Example
 
     require 'rubygems'

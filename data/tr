@@ -3,12 +3,12 @@ version: 2
 anglicized_name: Turkish
 native_name: Türkçe
 codepoints:
-- !ruby/range 33..35 # ! " #
-- !ruby/range 37..47 # % & ' ( ) * + , - . /
+- !ruby/range 33..34 # ! "
+- 37 # %
+- !ruby/range 39..47 # ' ( ) * + , - . /
 - !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
 - !ruby/range 58..59 # : ;
-- 61 # =
-- !ruby/range 63..64 # ? @
+- 63 # ?
 - !ruby/range 65..90 # A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
 - !ruby/range 91..93 # [ \ ]
 - 95 # _
@@ -20,13 +20,11 @@ codepoints:
 - 199 # Ç
 - 206 # Î
 - 214 # Ö
-- 215 # ×
 - !ruby/range 219..220 # Û,Ü
 - 226 # â
 - 231 # ç
 - 238 # î
 - 246 # ö
-- 247 # ÷
 - !ruby/range 251..252 # û,ü
 - 286 # Ğ
 - 287 # ğ
@@ -43,4 +41,4 @@ codepoints:
 - 8378 # ₺
 parlance:
   schema_version: 1
-  definition_hash: ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6
+  definition_hash: 457aa129258f68a9ae28925c0efbac5121ed0c31c5740b110f2791dbb81b8b39

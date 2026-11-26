@@ -1,5 +1,9 @@
 {
-  "definition_hash": "ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6",
+  "capability_ids": [
+    "Zmth-basic",
+    "Zsym-publishing"
+  ],
+  "definition_hash": "457aa129258f68a9ae28925c0efbac5121ed0c31c5740b110f2791dbb81b8b39",
   "generator": "Parlance",
   "language_ids": [
     "Deva",
@@ -84,6 +88,23 @@
       "verified"
     ],
     "exclusions": [
+      {
+        "codepoints": [
+          35,
+          38,
+          61,
+          64,
+          215,
+          247
+        ],
+        "except_ids": [],
+        "reason": "Experiment with independent math and publishing capabilities: remove only #, &, =, @, multiplication, and division from non-legacy language minima. Preserve numerals, currency, ordinary punctuation, raw inventories, and frozen legacy requirements.",
+        "scope": "generated",
+        "sources": [
+          "Experimental capability proposal, 2026-11-26"
+        ],
+        "when_required": []
+      },
       {
         "codepoints": [
           94
@@ -208,7 +229,7 @@
         ]
       }
     ],
-    "id": "standard-coverage-v1",
+    "id": "experimental-symbol-capabilities-v1",
     "language_statuses": [
       "living"
     ],

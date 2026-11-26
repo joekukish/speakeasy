@@ -3,20 +3,18 @@ version: 2
 anglicized_name: Modern Greek
 native_name: Ελληνικά
 codepoints:
-- !ruby/range 33..35 # ! " #
-- !ruby/range 37..47 # % & ' ( ) * + , - . /
+- !ruby/range 33..34 # ! "
+- 37 # %
+- !ruby/range 39..47 # ' ( ) * + , - . /
 - !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
 - !ruby/range 58..59 # : ;
-- 61 # =
-- !ruby/range 63..64 # ? @
+- 63 # ?
 - !ruby/range 91..93 # [ \ ]
 - 95 # _
 - !ruby/range 123..125 # { | }
 - 171 # «
 - 183 # ·
 - 187 # »
-- 215 # ×
-- 247 # ÷
 - 902 # Ά
 - !ruby/range 904..906 # Έ,Ή,Ί
 - 908 # Ό
@@ -32,4 +30,4 @@ codepoints:
 - 8364 # €
 parlance:
   schema_version: 1
-  definition_hash: ba4185977e22b4ffddfa9895a9582d9d3a0ff8592eb3681c546c02aa03c430e6
+  definition_hash: 457aa129258f68a9ae28925c0efbac5121ed0c31c5740b110f2791dbb81b8b39

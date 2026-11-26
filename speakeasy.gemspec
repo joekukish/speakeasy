@@ -67,6 +67,8 @@ Gem::Specification.new do |s|
     LICENSE
     README.md
     Rakefile
+    capabilities/Zmth-basic
+    capabilities/Zsym-publishing
     data/Deva
     data/Guru
     data/HK
@@ -146,10 +148,13 @@ Gem::Specification.new do |s|
     data/zh-Hant
     data/zh-Latn-pinyin
     lib/speakeasy.rb
+    lib/speakeasy/capability.rb
     lib/speakeasy/language.rb
     parlance-manifest.json
+    parlance-source.json
     speakeasy.gemspec
     spec/language_spec.rb
+    spec/capability_spec.rb
     spec/spec_helper.rb
   ]
   # = MANIFEST =

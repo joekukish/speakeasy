@@ -1,0 +1,18 @@
+---
+version: 2
+anglicized_name: Basic mathematical notation
+native_name: Basic mathematical notation
+codepoints:
+- 37 # %
+- !ruby/range 40..47 # ( ) * + , - . /
+- !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
+- !ruby/range 60..62 # < = >
+- 177 # ±
+- 215 # ×
+- 247 # ÷
+- 8722 # −
+- 8800 # ≠
+- !ruby/range 8804..8805 # ≤ ≥
+parlance:
+  schema_version: 1
+  definition_hash: 457aa129258f68a9ae28925c0efbac5121ed0c31c5740b110f2791dbb81b8b39
