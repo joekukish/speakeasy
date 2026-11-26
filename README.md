@@ -40,7 +40,8 @@ Note: codepoints should only include normalized unicode codepoints.
 ## Experimental independent capabilities
 
 `Speakeasy::Language.all`, `.each`, and `.supported_language_ids` still enumerate
-the 78 existing language/script profiles. Capability definitions live separately
+81 language/script profiles, including Welsh (`cy`), Icelandic (`is`), and
+Lithuanian (`lt`). Capability definitions live separately
 under `capabilities/` and never become primary-language candidates.
 
 | Capability | Required glyphs |
@@ -69,10 +70,14 @@ Editorial excludes `„` and covers common Western quotation and sentence punctu
 locale formatting. Language-specific quotation requirements remain unchanged.
 ASCII digits remain in language minima and both math inventories.
 
-Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 65 generated nonlegacy language
+Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 68 generated nonlegacy language
 minima. Digits, currency, ordinary punctuation, reviewed letters, and the 13 frozen
 public definitions remain unchanged. Overlap with language requirements is
 intentional. `parlance-source.json` pins the producer revision and artifact hashes.
+
+The three new profiles use pinned Hyperglot primary Latin orthographies and the
+existing shared policy. Icelandic additionally requires its CLDR closing primary
+quotation delimiter `“`. Panafrican and IPA remain frozen and unchanged.
 
 ## Example
 

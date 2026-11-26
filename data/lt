@@ -1,0 +1,45 @@
+---
+version: 2
+anglicized_name: Lithuanian
+native_name: Lietuviškai
+codepoints:
+- !ruby/range 33..34 # ! "
+- 37 # %
+- !ruby/range 39..47 # ' ( ) * + , - . /
+- !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
+- !ruby/range 58..59 # : ;
+- 63 # ?
+- !ruby/range 65..90 # A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
+- !ruby/range 91..93 # [ \ ]
+- 95 # _
+- !ruby/range 97..122 # a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+- !ruby/range 123..125 # { | }
+- 260 # Ą
+- 261 # ą
+- 268 # Č
+- 269 # č
+- 278 # Ė
+- 279 # ė
+- 280 # Ę
+- 281 # ę
+- 302 # Į
+- 303 # į
+- 352 # Š
+- 353 # š
+- 362 # Ū
+- 363 # ū
+- 370 # Ų
+- 371 # ų
+- 381 # Ž
+- 382 # ž
+- !ruby/range 8211..8212 # – —
+- 8216 # ‘
+- 8218 # ‚
+- 8220 # “
+- 8222 # „
+- 8226 # •
+- 8230 # …
+- 8364 # €
+parlance:
+  schema_version: 1
+  definition_hash: e9f60f2d3aeb0f73047ec812a6a48543762473ab6b1f85ebe23a4b68c2536904

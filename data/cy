@@ -1,0 +1,51 @@
+---
+version: 2
+anglicized_name: Welsh
+native_name: Cymraeg
+codepoints:
+- !ruby/range 33..34 # ! "
+- 37 # %
+- !ruby/range 39..47 # ' ( ) * + , - . /
+- !ruby/range 48..57 # 0,1,2,3,4,5,6,7,8,9
+- !ruby/range 58..59 # : ;
+- 63 # ?
+- !ruby/range 65..90 # A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
+- !ruby/range 91..93 # [ \ ]
+- 95 # _
+- !ruby/range 97..122 # a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z
+- !ruby/range 123..125 # { | }
+- 163 # £
+- !ruby/range 192..194 # À,Á,Â
+- 196 # Ä
+- !ruby/range 200..207 # È,É,Ê,Ë,Ì,Í,Î,Ï
+- !ruby/range 210..212 # Ò,Ó,Ô
+- 214 # Ö
+- !ruby/range 217..221 # Ù,Ú,Û,Ü,Ý
+- !ruby/range 224..226 # à,á,â
+- 228 # ä
+- !ruby/range 232..239 # è,é,ê,ë,ì,í,î,ï
+- !ruby/range 242..244 # ò,ó,ô
+- 246 # ö
+- !ruby/range 249..253 # ù,ú,û,ü,ý
+- 255 # ÿ
+- 372 # Ŵ
+- 373 # ŵ
+- 374 # Ŷ
+- 375 # ŷ
+- 376 # Ÿ
+- 7808 # Ẁ
+- 7809 # ẁ
+- 7810 # Ẃ
+- 7811 # ẃ
+- 7812 # Ẅ
+- 7813 # ẅ
+- 7922 # Ỳ
+- 7923 # ỳ
+- !ruby/range 8211..8212 # – —
+- !ruby/range 8216..8217 # ‘ ’
+- !ruby/range 8220..8221 # “ ”
+- 8226 # •
+- 8230 # …
+parlance:
+  schema_version: 1
+  definition_hash: e9f60f2d3aeb0f73047ec812a6a48543762473ab6b1f85ebe23a4b68c2536904

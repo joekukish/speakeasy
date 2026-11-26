@@ -84,6 +84,7 @@ Gem::Specification.new do |s|
     data/ca
     data/chr
     data/cs
+    data/cy
     data/da
     data/de
     data/dv
@@ -103,6 +104,7 @@ Gem::Specification.new do |s|
     data/hu
     data/hy
     data/id
+    data/is
     data/it
     data/ja
     data/jv
@@ -113,6 +115,7 @@ Gem::Specification.new do |s|
     data/kn
     data/ko
     data/lo
+    data/lt
     data/lv
     data/mk
     data/ml

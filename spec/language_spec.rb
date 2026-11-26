@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + "/spec_helper"
 
 describe "A Language" do
-  SupportedLanguages = 78
+  SupportedLanguages = 81
 
   it "can list the supported language ids" do
     expect(Speakeasy::Language.supported_language_ids.size).to eq(SupportedLanguages)
@@ -13,6 +13,20 @@ describe "A Language" do
 
   it "can iterate over all supported languages" do
     expect(Speakeasy::Language.each.to_a.size).to eq(SupportedLanguages)
+  end
+
+  {
+    "cy" => [0x0174, 0x0175, 0x0176, 0x0177, 0x1EF2, 0x1EF3, 0x00A3],
+    "is" => [0x00D0, 0x00F0, 0x00DE, 0x00FE, 0x201C, 0x201E, 0x20AC],
+    "lt" => [0x0116, 0x0117, 0x012E, 0x012F, 0x0172, 0x0173, 0x201C, 0x201E, 0x20AC]
+  }.each do |identifier, required|
+    it "loads and packages #{identifier} with letters, punctuation, digits and currency" do
+      expect(Speakeasy::Language.new(identifier).codepoints).to include(
+        *required, 0x0030, 0x0039, 0x002C, 0x002E, 0x0021, 0x003F
+      )
+      specification = Gem::Specification.load(File.expand_path("../speakeasy.gemspec", __dir__))
+      expect(specification.files).to include("data/#{identifier}")
+    end
   end
 
   it "does not require the globally excluded characters in any language" do

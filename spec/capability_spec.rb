@@ -5,7 +5,7 @@ describe "Independent capabilities" do
     expect(Speakeasy::Capability.supported_capability_ids).to match_array(
       %w[Zmth-basic Zmth-extended Zsym-editorial Zsym-publishing]
     )
-    expect(Speakeasy::Language.supported_language_ids.size).to eq(78)
+    expect(Speakeasy::Language.supported_language_ids.size).to eq(81)
     expect(Speakeasy::Language.supported_language_ids & Speakeasy::Capability.supported_capability_ids).to be_empty
     expect(Speakeasy::Capability.each.map(&:capability_id)).to match_array(
       %w[Zmth-basic Zmth-extended Zsym-editorial Zsym-publishing]
