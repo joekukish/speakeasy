@@ -46,6 +46,7 @@ under `capabilities/` and never become primary-language candidates.
 | Capability | Required glyphs |
 | --- | --- |
 | `Zmth-basic` | `0123456789+-*/=−×÷±<>≤≥≠(),.%` (29) |
+| `Zmth-extended` | All of `Zmth-basic` plus `∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔` (58 total) |
 | `Zsym-publishing` | `©®™§¶•†‡…°&@#` (13) |
 
 ```ruby
@@ -61,6 +62,8 @@ whole math capability. Missing a capability glyph does not revoke otherwise vali
 language coverage, and math glyph coverage does not certify OpenType MATH tables
 or mathematical typesetting. These are product-scoped identifiers using ISO
 15924 prefixes, not language/locale tags or exhaustive script inventories.
+Extended support implies basic support; an extended-only missing glyph removes
+only the extended label. Greek variables are deliberately excluded.
 
 Only `#`, `&`, `=`, `@`, `×`, and `÷` leave the 65 generated nonlegacy language
 minima. Digits, currency, ordinary punctuation, reviewed letters, and the 13 frozen

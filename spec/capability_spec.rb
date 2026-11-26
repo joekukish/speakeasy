@@ -3,18 +3,19 @@ require File.dirname(__FILE__) + "/spec_helper"
 describe "Independent capabilities" do
   it "keeps capabilities out of language enumeration" do
     expect(Speakeasy::Capability.supported_capability_ids).to match_array(
-      %w[Zmth-basic Zsym-publishing]
+      %w[Zmth-basic Zmth-extended Zsym-publishing]
     )
     expect(Speakeasy::Language.supported_language_ids.size).to eq(78)
     expect(Speakeasy::Language.supported_language_ids & Speakeasy::Capability.supported_capability_ids).to be_empty
     expect(Speakeasy::Capability.each.map(&:capability_id)).to match_array(
-      %w[Zmth-basic Zsym-publishing]
+      %w[Zmth-basic Zmth-extended Zsym-publishing]
     )
   end
 
   it "requires the exact complete glyph inventories independently of language exclusions" do
     expected = {
       "Zmth-basic" => "0123456789+-*/=−×÷±<>≤≥≠(),.%",
+      "Zmth-extended" => "0123456789+-*/=−×÷±<>≤≥≠(),.%∑∏√∞∫∂∇∈∉∅∩∪⊆⊇¬∧∨∀∃≈≡∝≪≫←→↔⇒⇔",
       "Zsym-publishing" => "©®™§¶•†‡…°&@#"
     }
     expected.each do |id, text|
@@ -27,6 +28,17 @@ describe "Independent capabilities" do
     expect {
       Speakeasy::Capability.new("Zmth-basic").supported_by?(nil)
     }.to raise_error(ArgumentError)
+  end
+
+  it "retains basic coverage when an extended-only glyph is missing" do
+    basic = Speakeasy::Capability.new("Zmth-basic")
+    extended = Speakeasy::Capability.new("Zmth-extended")
+    glyphs = extended.codepoints.dup
+    expect(basic.supported_by?(glyphs)).to eq(true)
+    expect(extended.supported_by?(glyphs)).to eq(true)
+    glyphs.delete(0x2211)
+    expect(extended.supported_by?(glyphs)).to eq(false)
+    expect(basic.supported_by?(glyphs)).to eq(true)
   end
 
   it "does not revoke language support when a capability glyph is missing" do

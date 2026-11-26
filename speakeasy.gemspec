@@ -68,6 +68,7 @@ Gem::Specification.new do |s|
     README.md
     Rakefile
     capabilities/Zmth-basic
+    capabilities/Zmth-extended
     capabilities/Zsym-publishing
     data/Deva
     data/Guru
