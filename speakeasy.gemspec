@@ -70,7 +70,6 @@ Gem::Specification.new do |s|
     capabilities/Zmth-basic
     capabilities/Zmth-extended
     capabilities/Zsym-editorial
-    capabilities/Zsym-numerals
     capabilities/Zsym-publishing
     data/Deva
     data/Guru
